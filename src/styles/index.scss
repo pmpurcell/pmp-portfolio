@@ -4,3 +4,21 @@
 body {
   background-color: $favColor !important;
 }
+
+#aboutDiv {
+  display: flex;
+}
+
+#images {
+  display: flex;
+  width: 45%;
+}
+
+.image-div {
+  margin: 15px;
+  border: 2px solid black;
+}
+
+#aboutText {
+  width: 500px;
+}
