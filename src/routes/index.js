@@ -4,6 +4,7 @@ import About from '../components/About';
 import Contact from '../components/Contact';
 import Create from '../components/Create';
 import Edit from '../components/Edit';
+import projectDetails from '../components/projectDetails';
 import Projects from '../components/Projects';
 import Technologies from '../components/Technologies';
 
@@ -15,7 +16,8 @@ export default function Routes() {
       <Route exact path="/tech" component={Technologies} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/create" component={Create} />
-      <Route exact path="/edit/:key" component={Edit} />
+      <Route exact path="/details/:firebaseKey" component={projectDetails} />
+      <Route exact path="/edit/:firebaseKey" component={Edit} />
     </Switch>
   );
 }

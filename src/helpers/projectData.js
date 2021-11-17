@@ -10,6 +10,13 @@ const getProjects = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleProject = (firebaseKey) => new Promise((resolve, reject) => {
+  axios
+    .get(`${dbUrl}/projects/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
 const createProject = (projectObj) => new Promise((resolve, reject) => {
   axios
     .post(`${dbUrl}/projects.json`, projectObj)
@@ -22,4 +29,4 @@ const createProject = (projectObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getProjects, createProject };
+export { getProjects, getSingleProject, createProject };
