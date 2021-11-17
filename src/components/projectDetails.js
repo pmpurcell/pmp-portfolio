@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSingleProject } from '../helpers/projectData';
+import Navigation from './Navbar';
 
 export default function projectDetails() {
   const [item, setItem] = useState({});
@@ -18,6 +19,7 @@ export default function projectDetails() {
 
   return (
     <div>
+      <Navigation />
       <h1>{item.projectName}</h1>
       <img src={item.image} alt={item.projectName} />
       <p>{item.description}</p>

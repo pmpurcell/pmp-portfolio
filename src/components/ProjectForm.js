@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { createProject } from '../helpers/projectData';
+import { PropTypes } from 'prop-types';
+import { createProject, updateProject } from '../helpers/projectData';
 import Navigation from './Navbar';
 
 const initialState = {
@@ -8,10 +9,26 @@ const initialState = {
   description: '',
   image: '',
   projectLink: '',
+  firebaseKey: '',
 };
 
-export default function ProjectForm() {
+export default function ProjectForm({ item = {} }) {
   const [formInput, setFormInput] = useState(initialState);
+
+  useEffect(() => {
+    console.log(item);
+    if (item.firebaseKey) {
+      console.log(formInput);
+      setFormInput({
+        projectName: item.projectName,
+        description: item.description,
+        image: item.image,
+        projectLink: item.projectLink,
+        firebaseKey: item.firebaseKey,
+      });
+      console.log(formInput);
+    }
+  }, [item]);
 
   const history = useHistory();
 
@@ -24,7 +41,11 @@ export default function ProjectForm() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    createProject(formInput).then(() => history.push('/projects'));
+    if (item.firebaseKey) {
+      updateProject(formInput).then(() => history.push('/projects'));
+    } else {
+      createProject(formInput).then(() => history.push('/projects'));
+    }
   };
 
   return (
@@ -36,8 +57,9 @@ export default function ProjectForm() {
             Project Name
             <input
               type="text"
+              value={formInput.projectName || ''}
               className="form-control"
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
               id="projectName"
             />
           </label>
@@ -47,8 +69,9 @@ export default function ProjectForm() {
             Project Description
             <input
               type="text"
+              value={formInput.description || ''}
               className="form-control"
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
               id="description"
             />
           </label>
@@ -57,9 +80,10 @@ export default function ProjectForm() {
           <label htmlFor="image" className="form-label">
             Image
             <input
-              type="file"
+              type="text"
+              value={formInput.image || ''}
               className="form-control"
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
               id="image"
             />
           </label>
@@ -69,8 +93,9 @@ export default function ProjectForm() {
             Project Link
             <input
               type="text"
+              value={formInput.projectLink || ''}
               className="form-control"
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
               id="projectLink"
             />
           </label>
@@ -87,3 +112,7 @@ export default function ProjectForm() {
     </div>
   );
 }
+
+ProjectForm.propTypes = {
+  item: PropTypes.shape({}).isRequired,
+};
