@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { createProject } from '../helpers/projectData';
 import Navigation from './Navbar';
 
 const initialState = {
-  name: '',
+  projectName: '',
   description: '',
   image: '',
   projectLink: '',
@@ -10,6 +12,8 @@ const initialState = {
 
 export default function ProjectForm() {
   const [formInput, setFormInput] = useState(initialState);
+
+  const history = useHistory();
 
   const handleChange = (e) => {
     setFormInput((prevState) => ({
@@ -20,7 +24,7 @@ export default function ProjectForm() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.warn(formInput);
+    createProject(formInput).then(() => history.push('/projects'));
   };
 
   return (
@@ -28,13 +32,13 @@ export default function ProjectForm() {
       <Navigation />
       <form>
         <div className="mb-3">
-          <label htmlFor="name" className="form-label">
+          <label htmlFor="projectName" className="form-label">
             Project Name
             <input
               type="text"
               className="form-control"
               onChange={(e) => handleChange(e)}
-              id="name"
+              id="projectName"
             />
           </label>
         </div>

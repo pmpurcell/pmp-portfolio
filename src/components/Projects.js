@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import getProjects from '../helpers/projectData';
+import { getProjects } from '../helpers/projectData';
 import Navigation from './Navbar';
 
 export default function Projects() {
@@ -22,7 +22,7 @@ export default function Projects() {
       <Navigation />
       <h1>Projects</h1>
       {projects.map((project) => (
-        <h1>{project.name}</h1>
+        <h1>{project.projectName}</h1>
       ))}
       <Link to="/create">Add new project</Link>
     </div>
