@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getProjects } from '../helpers/projectData';
 import Navigation from './Navbar';
+import ProjectCard from './ProjectCard';
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -22,7 +23,7 @@ export default function Projects() {
       <Navigation />
       <h1>Projects</h1>
       {projects.map((project) => (
-        <h1>{project.projectName}</h1>
+        <ProjectCard project={project} />
       ))}
       <Link to="/create">Add new project</Link>
     </div>
