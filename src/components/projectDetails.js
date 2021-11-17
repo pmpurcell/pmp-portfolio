@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getSingleProject } from '../helpers/projectData';
+import { useParams, useHistory } from 'react-router-dom';
+import { deleteProject, getSingleProject } from '../helpers/projectData';
 import Navigation from './Navbar';
 
 export default function projectDetails() {
   const [item, setItem] = useState({});
   const { firebaseKey } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     let isMounted = true;
@@ -16,6 +17,10 @@ export default function projectDetails() {
       isMounted = false;
     };
   }, []);
+
+  const handleDelete = () => {
+    deleteProject(firebaseKey).then(() => history.push('/projects'));
+  };
 
   return (
     <div>
@@ -33,6 +38,9 @@ export default function projectDetails() {
       >
         View App
       </a>
+      <button type="button" onClick={handleDelete} className="btn btn-danger">
+        DELETE
+      </button>
     </div>
   );
 }

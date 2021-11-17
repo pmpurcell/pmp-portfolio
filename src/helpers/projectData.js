@@ -36,6 +36,17 @@ const updateProject = (projectObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const deleteProject = (firebaseKey) => new Promise((resolve, reject) => {
+  axios
+    .delete(`${dbUrl}/projects/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
 export {
-  getProjects, getSingleProject, createProject, updateProject,
+  getProjects,
+  getSingleProject,
+  createProject,
+  updateProject,
+  deleteProject,
 };
