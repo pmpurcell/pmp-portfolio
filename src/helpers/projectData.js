@@ -29,4 +29,13 @@ const createProject = (projectObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getProjects, getSingleProject, createProject };
+const updateProject = (projectObj) => new Promise((resolve, reject) => {
+  axios
+    .patch(`${dbUrl}/projects/${projectObj.firebaseKey}.json`, projectObj)
+    .then(() => getProjects().then(resolve))
+    .catch(reject);
+});
+
+export {
+  getProjects, getSingleProject, createProject, updateProject,
+};
