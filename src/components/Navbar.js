@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import { signInUser, signOutUser } from '../api/auth';
 
-export default function Navigation() {
+export default function Navigation({ user }) {
+  console.warn(user);
   return (
     <div>
       <div>
@@ -36,6 +39,24 @@ export default function Navigation() {
                     Contact
                   </Link>
                 </li>
+                {user ? (
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={signOutUser}
+                  >
+                    Sign Out
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={signInUser}
+                  >
+                    Sign In
+                  </button>
+                )}
+                {user?.isAdmin && <Link to="/create">Add new project</Link>}
               </ul>
             </div>
           </div>
@@ -44,3 +65,13 @@ export default function Navigation() {
     </div>
   );
 }
+
+Navigation.propTypes = {
+  user: PropTypes.shape({
+    isAdmin: PropTypes.bool,
+  }),
+};
+
+Navigation.defaultProps = {
+  user: {},
+};

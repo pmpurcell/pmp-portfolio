@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, Link } from 'react-router-dom';
 import { deleteProject, getSingleProject } from '../helpers/projectData';
-import Navigation from './Navbar';
 
 export default function projectDetails() {
   const [item, setItem] = useState({});
@@ -24,7 +23,6 @@ export default function projectDetails() {
 
   return (
     <div>
-      <Navigation />
       <h1>{item.projectName}</h1>
       <img src={item.image} alt={item.projectName} />
       <p>{item.description}</p>
@@ -41,6 +39,7 @@ export default function projectDetails() {
       <button type="button" onClick={handleDelete} className="btn btn-danger">
         DELETE
       </button>
+      <Link to={`/edit/${item.firebaseKey}`}>Edit</Link>
     </div>
   );
 }
