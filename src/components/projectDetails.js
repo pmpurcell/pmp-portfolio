@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { PropTypes } from 'prop-types';
 import { useParams, useHistory, Link } from 'react-router-dom';
 import { deleteProject, getSingleProject } from '../helpers/projectData';
 
-export default function projectDetails() {
+export default function ProjectDetails({ user }) {
   const [item, setItem] = useState({});
   const { firebaseKey } = useParams();
   const history = useHistory();
@@ -36,10 +37,28 @@ export default function projectDetails() {
       >
         View App
       </a>
-      <button type="button" onClick={handleDelete} className="btn btn-danger">
-        DELETE
-      </button>
-      <Link to={`/edit/${item.firebaseKey}`}>Edit</Link>
+      {user?.isAdmin && (
+        <>
+          <button
+            type="button"
+            onClick={handleDelete}
+            className="btn btn-danger"
+          >
+            DELETE
+          </button>
+          <Link to={`/edit/${item.firebaseKey}`}>Edit</Link>
+        </>
+      )}
     </div>
   );
 }
+
+ProjectDetails.propTypes = {
+  user: PropTypes.shape({
+    isAdmin: PropTypes.bool,
+  }),
+};
+
+ProjectDetails.defaultProps = {
+  user: {},
+};
