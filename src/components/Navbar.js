@@ -39,6 +39,14 @@ export default function Navigation({ user }) {
                     Contact
                   </Link>
                 </li>
+                {user?.isAdmin && (
+                  <li className="nav-item">
+                    {' '}
+                    <Link className="nav-link active" to="/create">
+                      Add new project
+                    </Link>{' '}
+                  </li>
+                )}
                 {user ? (
                   <button
                     type="button"
@@ -56,7 +64,6 @@ export default function Navigation({ user }) {
                     Sign In
                   </button>
                 )}
-                {user?.isAdmin && <Link to="/create">Add new project</Link>}
               </ul>
             </div>
           </div>
