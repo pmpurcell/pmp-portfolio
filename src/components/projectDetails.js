@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import { useParams, useHistory, Link } from 'react-router-dom';
 import { deleteProject, getSingleProject } from '../helpers/projectData';
-import Navigation from './Navbar';
 
-export default function projectDetails() {
+export default function ProjectDetails({ user }) {
   const [item, setItem] = useState({});
   const { firebaseKey } = useParams();
   const history = useHistory();
@@ -24,7 +24,6 @@ export default function projectDetails() {
 
   return (
     <div>
-      <Navigation />
       <h1>{item.projectName}</h1>
       <img src={item.image} alt={item.projectName} />
       <p>{item.description}</p>
@@ -38,9 +37,28 @@ export default function projectDetails() {
       >
         View App
       </a>
-      <button type="button" onClick={handleDelete} className="btn btn-danger">
-        DELETE
-      </button>
+      {user?.isAdmin && (
+        <>
+          <button
+            type="button"
+            onClick={handleDelete}
+            className="btn btn-danger"
+          >
+            DELETE
+          </button>
+          <Link to={`/edit/${item.firebaseKey}`}>Edit</Link>
+        </>
+      )}
     </div>
   );
 }
+
+ProjectDetails.propTypes = {
+  user: PropTypes.shape({
+    isAdmin: PropTypes.bool,
+  }),
+};
+
+ProjectDetails.defaultProps = {
+  user: {},
+};

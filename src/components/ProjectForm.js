@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { createProject, updateProject } from '../helpers/projectData';
-import Navigation from './Navbar';
 
 const initialState = {
   projectName: '',
@@ -50,7 +49,6 @@ export default function ProjectForm({ item = {} }) {
 
   return (
     <div>
-      <Navigation />
       <form>
         <div className="mb-3">
           <label htmlFor="projectName" className="form-label">

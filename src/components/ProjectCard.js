@@ -8,7 +8,6 @@ export default function ProjectCard({ project }) {
       <h1>{project.projectName}</h1>
       <img src={project.image} alt={project.projectName} />
       <Link to={`/details/${project.firebaseKey}`}>Details</Link>
-      <Link to={`/edit/${project.firebaseKey}`}>Edit</Link>
     </div>
   );
 }
