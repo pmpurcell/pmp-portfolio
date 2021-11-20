@@ -1,30 +1,53 @@
 import React from 'react';
+import { Carousel } from 'react-bootstrap';
 
 export default function About() {
   return (
     <div>
       <div id="aboutDiv">
-        <div id="images">
-          <div className="image-div">
-            <img src="" alt="Item 1" />
-            <h4>Header</h4>
-            <p>This is info text</p>
-          </div>
-          <div className="image-div">
-            <img src="" alt="Item 1" />
-            <h4>Header</h4>
-            <p>This is info text</p>
-          </div>
-          <div className="image-div">
-            <img src="" alt="Item 1" />
-            <h4>Header</h4>
-            <p>This is info text</p>
-          </div>
-          <div className="image-div">
-            <img src="" alt="Item 1" />
-            <h4>Header</h4>
-            <p>This is info text</p>
-          </div>
+        <div id="imageCarousel">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://i.imgur.com/hVkoM4K.jpg"
+                alt="First slide"
+              />
+              <Carousel.Caption>
+                <h3>Traveller</h3>
+                <p>
+                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://media-exp1.licdn.com/dms/image/C4E22AQHVaauCiVUOSw/feedshare-shrink_1280/0/1637275236374?e=1640217600&v=beta&t=OLrv78NTcchZKplNistfx9KbIQFJDCOB3kbgsf3lUAY"
+                alt="Second slide"
+              />
+
+              <Carousel.Caption>
+                <h3>Educator</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://cdn.bandmix.com/bandmix_us/media/1177/1177535/1501487-l.jpg"
+                alt="Third slide"
+              />
+
+              <Carousel.Caption>
+                <h3>Musician</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
         </div>
         <div id="aboutText">
           <h1>About</h1>
