@@ -28,7 +28,7 @@ export default function ProjectDetails({ user }) {
       <img src={item.image} alt={item.projectName} />
       <p>{item.description}</p>
       <a
-        href={item.projectLink}
+        href={item.appLink}
         className="btn btn-secondary"
         role="button"
         target="_blank"
@@ -36,6 +36,16 @@ export default function ProjectDetails({ user }) {
         data-bs-toggle="button"
       >
         View App
+      </a>
+      <a
+        href={item.githubLink}
+        className="btn btn-secondary"
+        role="button"
+        target="_blank"
+        rel="noreferrer"
+        data-bs-toggle="button"
+      >
+        View Github
       </a>
       {user?.isAdmin && (
         <>

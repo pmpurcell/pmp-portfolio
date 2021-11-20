@@ -7,7 +7,8 @@ const initialState = {
   projectName: '',
   description: '',
   image: '',
-  projectLink: '',
+  appLink: '',
+  githubLink: '',
   firebaseKey: '',
 };
 
@@ -15,17 +16,15 @@ export default function ProjectForm({ item = {} }) {
   const [formInput, setFormInput] = useState(initialState);
 
   useEffect(() => {
-    console.log(item);
     if (item.firebaseKey) {
-      console.log(formInput);
       setFormInput({
         projectName: item.projectName,
         description: item.description,
         image: item.image,
-        projectLink: item.projectLink,
+        appLink: item.appLink,
+        githubLink: item.githubLink,
         firebaseKey: item.firebaseKey,
       });
-      console.log(formInput);
     }
   }, [item]);
 
@@ -87,14 +86,26 @@ export default function ProjectForm({ item = {} }) {
           </label>
         </div>
         <div className="mb-3">
-          <label htmlFor="projectLink" className="form-label">
-            Project Link
+          <label htmlFor="appLink" className="form-label">
+            App Link
             <input
               type="text"
-              value={formInput.projectLink || ''}
+              value={formInput.appLink || ''}
               className="form-control"
               onChange={handleChange}
-              id="projectLink"
+              id="appLink"
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="githubLink" className="form-label">
+            Github Link
+            <input
+              type="text"
+              value={formInput.githubLink || ''}
+              className="form-control"
+              onChange={handleChange}
+              id="githubLink"
             />
           </label>
         </div>
