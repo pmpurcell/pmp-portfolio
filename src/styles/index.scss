@@ -12,22 +12,53 @@ body {
 #aboutDiv {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #imageCarousel {
+  background-color: $background;
+  border: 6px solid $border;
+  margin: 20px;
+  padding: 20px;
   max-width: 600px;
-  height: 500px;
+  max-height: 500px;
+}
+
+#imageCarousel h1 {
+  background-color: $background-two;
+  border: 6px solid $border;
+  color: #241715;
+  width: 50%;
+  margin-left: 20%;
 }
 
 #imageCarousel img {
-  max-height: 500px;
-  max-width: 600px;
+  height: 400px;
+  width: 300px;
 }
 
 .card {
   width: 25rem;
 }
 
-#aboutText {
-  width: 500px;
+#aboutInfoBlock {
+  background-color: $background;
+  border: 6px solid $border;
+  display: flex;
+  margin: 20px;
+  padding: 20px;
+  width: 520px;
 }
+
+#aboutInfoBlock img {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 15px;
+}
+
+#AboutText {
+  display: flex;
+  flex-direction: column;
+  margin: 15px
+}
+
