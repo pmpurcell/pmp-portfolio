@@ -11,20 +11,21 @@ body {
 
 #aboutDiv {
   display: flex;
+  flex-direction: row;
 }
 
-#images {
-  display: flex;
-  width: 45%;
+#imageCarousel {
+  max-width: 600px;
+  height: 500px;
+}
+
+#imageCarousel img {
+  max-height: 500px;
+  max-width: 600px;
 }
 
 .card {
   width: 25rem;
-}
-
-.image-div {
-  margin: 15px;
-  border: 2px solid black;
 }
 
 #aboutText {
