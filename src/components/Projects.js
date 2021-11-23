@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getProjects } from '../helpers/projectData';
+import AccentComponent from './AccentComponent';
 import ProjectCard from './ProjectCard';
 
 export default function Projects() {
@@ -18,10 +19,15 @@ export default function Projects() {
   }, []);
   return (
     <div>
-      <h1>Projects</h1>
-      {projects.map((project) => (
-        <ProjectCard project={project} />
-      ))}
+      <div className="projects-div">
+        <h1>Projects</h1>
+        <div className="cards-div">
+          {projects.map((project) => (
+            <ProjectCard project={project} />
+          ))}
+        </div>
+      </div>
+      <AccentComponent />
     </div>
   );
 }

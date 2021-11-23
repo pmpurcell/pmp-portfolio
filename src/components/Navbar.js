@@ -8,7 +8,7 @@ export default function Navigation({ user }) {
   return (
     <div>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-custom">
           <div className="container-fluid">
             <Link className="nav-link active" to="/">
               Home
@@ -23,48 +23,37 @@ export default function Navigation({ user }) {
               aria-label="Toggle navigation"
             />
             <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/projects">
-                    Projects
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/tech">
-                    Technologies
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/contact">
-                    Contact
-                  </Link>
-                </li>
-                {user?.isAdmin && (
-                  <li className="nav-item">
-                    {' '}
-                    <Link className="nav-link active" to="/create">
-                      Add new project
-                    </Link>{' '}
-                  </li>
-                )}
-                {user ? (
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={signOutUser}
-                  >
-                    Sign Out
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={signInUser}
-                  >
-                    Sign In
-                  </button>
-                )}
-              </ul>
+              <Link className="nav-link active" to="/projects">
+                Projects
+              </Link>
+              <Link className="nav-link active" to="/tech">
+                Technologies
+              </Link>
+              <Link className="nav-link active" to="/contact">
+                Contact
+              </Link>
+              {user?.isAdmin && (
+                <Link className="nav-link active" to="/create">
+                  Add new project
+                </Link>
+              )}
+              {user ? (
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={signOutUser}
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={signInUser}
+                >
+                  Sign In
+                </button>
+              )}
             </div>
           </div>
         </nav>

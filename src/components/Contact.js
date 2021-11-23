@@ -1,4 +1,5 @@
 import React from 'react';
+import AccentComponent from './AccentComponent';
 
 export default function Contact() {
   return (
@@ -43,6 +44,7 @@ export default function Contact() {
           </a>
         </div>
       </div>
+      <AccentComponent />
     </div>
   );
 }

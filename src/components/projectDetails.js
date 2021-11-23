@@ -23,7 +23,7 @@ export default function ProjectDetails({ user }) {
   };
 
   return (
-    <div>
+    <div className="details-div">
       <h1>{item.projectName}</h1>
       <img src={item.image} alt={item.projectName} />
       <p>{item.description}</p>

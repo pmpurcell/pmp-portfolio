@@ -1,4 +1,5 @@
 import React from 'react';
+import AccentComponent from './AccentComponent';
 
 export default function Technologies() {
   return (
@@ -41,6 +42,7 @@ export default function Technologies() {
           style={{ width: '100px', height: '100px' }}
         />
       </div>
+      <AccentComponent />
     </div>
   );
 }

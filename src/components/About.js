@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import AccentComponent from './AccentComponent';
 
 export default function About() {
   return (
@@ -65,6 +66,7 @@ export default function About() {
           />
         </div>
       </div>
+      <AccentComponent />
     </div>
   );
 }
