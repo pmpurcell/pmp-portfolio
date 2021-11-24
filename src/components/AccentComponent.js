@@ -5,7 +5,7 @@ export default function AccentComponent() {
     <div>
       <div className="left-rectangle" />
       <div className="right-rectangle" />
-      <footer className="footer-div"> © Madden Purcell</footer>
+      <footer className="footer-div"> © Madden Purcell, 2021</footer>
     </div>
   );
 }

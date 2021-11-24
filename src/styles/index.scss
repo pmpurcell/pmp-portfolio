@@ -1,23 +1,30 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'globals';
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
 
 body {
-  background-color: $favColor !important;
+  background-image: linear-gradient($favColor, $background-two);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .App {
   color: white;
 }
 
-.navbar {
-background-color: $navandfooter;
+.container {
 left: 15%;
 width: 75%;
-text-align: center;
+justify-content: center;
 }
 
 .navbar-custom {
   background-color: $navandfooter;
+}
+
+.navbar-custom .navbar-text {
+  color: whitesmoke;
 }
 
 // About Page
@@ -28,6 +35,15 @@ text-align: center;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media (max-width: 1300px) {
+  #aboutDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
 #imageCarousel {
@@ -48,8 +64,9 @@ text-align: center;
 }
 
 #imageCarousel img {
-  height: 400px;
-  width: 300px;
+  border: 8px groove $border; 
+  min-height: 450px;
+  min-width: 300px;
 }
 
 #aboutInfoBlock {
@@ -92,6 +109,7 @@ text-align: center;
 }
 
 .card {
+  animation: shrink 1s ease-in-out;
   margin: 15px;
   width: 25rem;
   border: 4px solid $border;
@@ -107,28 +125,37 @@ text-align: center;
 
 @media (any-hover:hover) {
   .card:hover {
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation: grow 1s ease-in-out 1 forwards;
   }
-  
-  @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }   
+
+  @keyframes grow {
+    from {
+      transform: scale(1)
+    } to  {
+      transform: scale(1.1)
+    }
+  }
+
+  @keyframes shrink {
+    from {
+      transform: scale(1.1)
+    } to  {
+      transform: scale(1)
+    }
   }
 }
 
 // Details
 
 .details-div {
+  animation: shrink 1s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .details-div img {
+  border: 8px solid $border;
   height: 600px;
   width: auto;
 }
@@ -145,6 +172,63 @@ margin-top: 20px;
 padding: 20px;
 width: 600px;
 }
+
+// Technology
+
+.tech-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-div {
+  left: 35%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-div img {
+  margin: 10px;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }   
+}
+
+// Contact
+
+.contact-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-cards {
+  align-items: center;
+  background-color: $background-two;
+  border: 4px solid $border;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 60px 20px 60px;
+}
+
+.contact-cards img {
+  height: 150px;
+  width: 150px;
+}
+
+a:link {
+  color:whitesmoke;
+}
+
 
 
 // Accent Component
@@ -173,14 +257,26 @@ background: #3A5743;
   background: #3A5743;
   }
 
+  @media (max-width: 1300px) {
+    .right-rectangle {
+      display: none;
+    }
+
+    .left-rectangle {
+      display: none;
+    }
+  }
+
   .footer-div {
     align-self: center;
     background: $navandfooter;
-    bottom: -750px;
+    border-top: 4px solid $border;
+    bottom: 0;
     color: black;
-    position: absolute;
+    padding: 10px;
+    position: fixed;
     width: 100%;
-    height: 100px;
+    height: 50px;
     text-align: center;
   }
 
