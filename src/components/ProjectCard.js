@@ -9,7 +9,13 @@ export default function ProjectCard({ project }) {
         <img src={project.image} alt={project.projectName} />
         <div className="card-body">
           <h5 className="card-title">{project.projectName}</h5>
-          <Link to={`/details/${project.firebaseKey}`}>Details</Link>
+          <Link
+            to={`/details/${project.firebaseKey}`}
+            type="button"
+            className="btn btn-primary"
+          >
+            Details
+          </Link>
         </div>
       </div>
     </div>

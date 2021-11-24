@@ -4,48 +4,38 @@ import { PropTypes } from 'prop-types';
 import { signInUser, signOutUser } from '../api/auth';
 
 export default function Navigation({ user }) {
-  console.warn(user);
   return (
     <div>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div className="container-fluid">
-            <Link className="nav-link active" to="/">
-              Home
-            </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            />
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/projects">
-                    Projects
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/tech">
-                    Technologies
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/contact">
-                    Contact
-                  </Link>
-                </li>
+        <div className="container">
+          <nav className="navbar navbar-expand-lg navbar-custom">
+            <div className="container-fluid">
+              <Link className="nav-link active" to="/">
+                Home
+              </Link>
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              />
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <Link className="nav-link active" to="/projects">
+                  Projects
+                </Link>
+                <Link className="nav-link active" to="/tech">
+                  Technologies
+                </Link>
+                <Link className="nav-link active" to="/contact">
+                  Contact
+                </Link>
                 {user?.isAdmin && (
-                  <li className="nav-item">
-                    {' '}
-                    <Link className="nav-link active" to="/create">
-                      Add new project
-                    </Link>{' '}
-                  </li>
+                  <Link className="nav-link active" to="/create">
+                    Add new project
+                  </Link>
                 )}
                 {user ? (
                   <button
@@ -64,10 +54,10 @@ export default function Navigation({ user }) {
                     Sign In
                   </button>
                 )}
-              </ul>
+              </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </div>
   );
