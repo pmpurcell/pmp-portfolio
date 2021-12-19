@@ -37,4 +37,4 @@ Responsive and animated views showcasing projects and technologies.
 
 
 # Contributors
-[Madden Purcell] (https://github.com/pmpurcell)
+[Madden Purcell](https://github.com/pmpurcell)
