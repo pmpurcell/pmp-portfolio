@@ -48,7 +48,7 @@ export default function Technologies() {
             style={{ width: '100px', height: '100px' }}
           />
           <img
-            src="https://worldvectorlogo.com/logo/cloudinary-2"
+            src="https://cdn.worldvectorlogo.com/logos/cloudinary-2.svg"
             alt="Cloudinary"
             style={{ width: '100px', height: '100px' }}
           />
