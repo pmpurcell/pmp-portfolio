@@ -42,6 +42,21 @@ export default function Technologies() {
             alt="Github"
             style={{ width: '100px', height: '100px' }}
           />
+          <img
+            src="https://cdn.worldvectorlogo.com/logos/firebase-1.svg"
+            alt="Firebase"
+            style={{ width: '100px', height: '100px' }}
+          />
+          <img
+            src="https://worldvectorlogo.com/logo/cloudinary-2"
+            alt="Cloudinary"
+            style={{ width: '100px', height: '100px' }}
+          />
+          <img
+            src="https://cdn.worldvectorlogo.com/logos/sass-1.svg"
+            alt="SASS"
+            style={{ width: '100px', height: '100px' }}
+          />
         </div>
       </div>
       <AccentComponent />
