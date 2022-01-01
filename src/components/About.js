@@ -22,7 +22,7 @@ export default function About() {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="https://media-exp1.licdn.com/dms/image/C4E22AQHVaauCiVUOSw/feedshare-shrink_1280/0/1637275236374?e=1640217600&v=beta&t=OLrv78NTcchZKplNistfx9KbIQFJDCOB3kbgsf3lUAY"
+                src="https://res.cloudinary.com/mpurcell/image/upload/v1641010280/educator_nwlm56.jpg"
                 alt="Second slide"
               />
 
