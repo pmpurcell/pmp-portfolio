@@ -61,7 +61,7 @@ export default function About() {
             </p>
           </div>
           <img
-            src="https://media-exp1.licdn.com/dms/image/C4E03AQHGo4RcetN_3g/profile-displayphoto-shrink_800_800/0/1543973366552?e=1642636800&v=beta&t=PnKu7y5GklOHjfbynV2FcsoYf0ynXIBsQcg3pN5-q74"
+            src="https://res.cloudinary.com/mpurcell/image/upload/v1643772126/1543973366552_iz2jwm.jpg"
             alt="Madden Purcell"
           />
         </div>
