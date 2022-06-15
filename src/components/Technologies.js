@@ -33,7 +33,7 @@ export default function Technologies() {
             style={{ width: '100px', height: '100px' }}
           />
           <img
-            src="https://media.badgr.com/uploads/badges/assertion-5NCzEIe5RXqVoLTl0FXJYg.png"
+            src="https://cdn.worldvectorlogo.com/logos/postman.svg"
             alt="Postman"
             style={{ width: '100px', height: '100px' }}
           />
@@ -55,6 +55,16 @@ export default function Technologies() {
           <img
             src="https://cdn.worldvectorlogo.com/logos/sass-1.svg"
             alt="SASS"
+            style={{ width: '100px', height: '100px' }}
+          />
+          <img
+            src="https://cdn.worldvectorlogo.com/logos/c--4.svg"
+            alt="C#"
+            style={{ width: '100px', height: '100px' }}
+          />
+          <img
+            src="https://cdn.worldvectorlogo.com/logos/flutter.svg"
+            alt="Flutter"
             style={{ width: '100px', height: '100px' }}
           />
         </div>
