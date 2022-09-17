@@ -43,7 +43,7 @@ export default function About() {
             </Carousel.Item>
           </Carousel>
         </div>
-        <div id="aboutInfoBlock">
+        <div id="aboutInfoBlock" className="bg-black">
           <div id="aboutText">
             <h1>My Story</h1>
             <p>
