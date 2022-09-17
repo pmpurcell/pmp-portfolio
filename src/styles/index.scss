@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
 
 body {
-  background-image: linear-gradient($favColor, $background-two);
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Nunito Sans', sans-serif;
@@ -69,7 +68,6 @@ a {
 }
 
 #aboutInfoBlock {
-  background-image: linear-gradient($background, whitesmoke);
   border: 6px solid $border;
   color: black;
   display: flex;
